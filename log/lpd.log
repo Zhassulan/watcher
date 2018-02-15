@@ -1,0 +1,60 @@
+15-02-2018 09:34:01.392 INFO  MyLogger:37 - registering: C:\temp\lpd\spl
+15-02-2018 09:34:01.395 INFO  MyLogger:37 - registering: C:\temp\lpd\spl\HOST01
+15-02-2018 09:34:01.396 INFO  MyLogger:37 - registering: C:\temp\lpd\spl\HOST02
+15-02-2018 09:34:15.947 ERROR MyLogger:17 - C:\temp\lpd\spl\HOST02\00003.SPL (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+java.io.FileNotFoundException: C:\temp\lpd\spl\HOST02\00003.SPL (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at kz.ugs.callisto.system.files.watcher.system.FileLockTest.isLocked(FileLockTest.java:15)
+	at kz.ugs.callisto.system.files.watcher.DirectoryWatcherRecursive.startListening(DirectoryWatcherRecursive.java:73)
+	at kz.ugs.callisto.system.files.watcher.DirectoryWatcherRecursive.startWatch(DirectoryWatcherRecursive.java:27)
+	at kz.ugs.callisto.system.files.watcher.WatcherService.start(WatcherService.java:35)
+	at kz.ugs.callisto.system.files.watcher.WhatchApp.main(WhatchApp.java:10)
+15-02-2018 09:34:16.026 INFO  MyLogger:74 - C:\temp\lpd\spl\HOST02\00003.SPL still locked..
+15-02-2018 09:34:18.041 INFO  MyLogger:77 - C:\temp\lpd\spl\HOST02\00003.SPL is not locked
+15-02-2018 09:34:18.044 INFO  MyLogger:29 - Trying to execute command ["C:/Program Files (x86)/SPLView/SPLView.exe", -p, C:\temp\lpd\spl\HOST02\00003.SPL]
+15-02-2018 09:35:27.309 INFO  MyLogger:39 - Exit code is -1
+15-02-2018 09:35:27.309 INFO  MyLogger:82 - File C:\temp\lpd\spl\HOST02\00003.SPL successfully sent to print application
+15-02-2018 09:35:27.312 INFO  MyLogger:26 - C:\temp\lpd\spl\HOST02\00003.SPL was successfully deleted
+15-02-2018 09:36:31.213 INFO  MyLogger:37 - registering: C:\temp\lpd\spl
+15-02-2018 09:36:31.215 INFO  MyLogger:37 - registering: C:\temp\lpd\spl\HOST01
+15-02-2018 09:36:31.216 INFO  MyLogger:37 - registering: C:\temp\lpd\spl\HOST02
+15-02-2018 09:36:40.425 ERROR MyLogger:17 - C:\temp\lpd\spl\HOST01\00003.SPL (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+java.io.FileNotFoundException: C:\temp\lpd\spl\HOST01\00003.SPL (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at kz.ugs.callisto.system.files.watcher.system.FileLockTest.isLocked(FileLockTest.java:15)
+	at kz.ugs.callisto.system.files.watcher.DirectoryWatcherRecursive.startListening(DirectoryWatcherRecursive.java:73)
+	at kz.ugs.callisto.system.files.watcher.DirectoryWatcherRecursive.startWatch(DirectoryWatcherRecursive.java:27)
+	at kz.ugs.callisto.system.files.watcher.WatcherService.start(WatcherService.java:35)
+	at kz.ugs.callisto.system.files.watcher.WhatchApp.main(WhatchApp.java:10)
+15-02-2018 09:36:40.428 INFO  MyLogger:74 - C:\temp\lpd\spl\HOST01\00003.SPL still locked..
+15-02-2018 09:36:42.435 INFO  MyLogger:77 - C:\temp\lpd\spl\HOST01\00003.SPL is not locked
+15-02-2018 09:36:42.436 INFO  MyLogger:29 - Trying to execute command ["C:/Program Files (x86)/SPLView/SPLView.exe", -p, C:\temp\lpd\spl\HOST01\00003.SPL]
+15-02-2018 09:37:00.140 INFO  MyLogger:39 - Exit code is -1
+15-02-2018 09:37:00.140 INFO  MyLogger:82 - File C:\temp\lpd\spl\HOST01\00003.SPL successfully sent to print application
+15-02-2018 09:37:00.142 INFO  MyLogger:26 - C:\temp\lpd\spl\HOST01\00003.SPL was successfully deleted
+15-02-2018 09:37:29.011 INFO  MyLogger:37 - registering: C:\temp\lpd\spl
+15-02-2018 09:37:29.014 INFO  MyLogger:37 - registering: C:\temp\lpd\spl\HOST01
+15-02-2018 09:37:29.014 INFO  MyLogger:37 - registering: C:\temp\lpd\spl\HOST02
+15-02-2018 09:37:35.495 ERROR MyLogger:17 - C:\temp\lpd\spl\HOST01\00003.SPL (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+java.io.FileNotFoundException: C:\temp\lpd\spl\HOST01\00003.SPL (Процесс не может получить доступ к файлу, так как этот файл занят другим процессом)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at kz.ugs.callisto.system.files.watcher.system.FileLockTest.isLocked(FileLockTest.java:15)
+	at kz.ugs.callisto.system.files.watcher.DirectoryWatcherRecursive.startListening(DirectoryWatcherRecursive.java:73)
+	at kz.ugs.callisto.system.files.watcher.DirectoryWatcherRecursive.startWatch(DirectoryWatcherRecursive.java:27)
+	at kz.ugs.callisto.system.files.watcher.WatcherService.start(WatcherService.java:35)
+	at kz.ugs.callisto.system.files.watcher.WhatchApp.main(WhatchApp.java:10)
+15-02-2018 09:37:35.497 INFO  MyLogger:74 - C:\temp\lpd\spl\HOST01\00003.SPL still locked..
+15-02-2018 09:37:37.514 INFO  MyLogger:77 - C:\temp\lpd\spl\HOST01\00003.SPL is not locked
+15-02-2018 09:37:37.517 INFO  MyLogger:29 - Trying to execute command ["C:/Program Files (x86)/SPLView/SPLView.exe", -p, C:\temp\lpd\spl\HOST01\00003.SPL]
+15-02-2018 09:37:38.338 INFO  MyLogger:39 - Exit code is 57345
+15-02-2018 09:37:38.338 INFO  MyLogger:82 - File C:\temp\lpd\spl\HOST01\00003.SPL successfully sent to print application
+15-02-2018 09:37:38.342 INFO  MyLogger:26 - C:\temp\lpd\spl\HOST01\00003.SPL was successfully deleted
