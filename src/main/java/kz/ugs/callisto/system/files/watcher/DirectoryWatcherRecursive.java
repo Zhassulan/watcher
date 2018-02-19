@@ -3,6 +3,8 @@ package kz.ugs.callisto.system.files.watcher;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +17,7 @@ import kz.ugs.callisto.system.files.watcher.system.FileLockTest;
 import kz.ugs.callisto.system.files.watcher.system.FileManager;
 import kz.ugs.callisto.system.files.watcher.system.MyLogger;
 import kz.ugs.callisto.system.files.watcher.system.WatcherSystem;
+import kz.ugs.callisto.system.files.watcher.system.PropsManager;
 
 public class DirectoryWatcherRecursive {
 
@@ -58,8 +61,13 @@ public class DirectoryWatcherRecursive {
 				if (watchEvent.kind() == StandardWatchEventKinds.ENTRY_CREATE) {
 					// this is not a complete path
 					Path path = (Path) watchEvent.context();
+					String fileName = path.toString();
+					MyLogger.logger.info("Path: " + path.toString());
 					// need to get parent path
 					Path parentPath = keyPathMap.get(queuedKey);
+					//MyLogger.logger.info("Parent path: " + parentPath.toString());
+					//MyLogger.logger.info("Subpath: " + parentPath.subpath(3, 4));
+					String hostDir =  parentPath.subpath(4, 5).toString();
 					// get complete path
 					path = parentPath.resolve(path);
 					fullPath = path.toString();
@@ -75,11 +83,27 @@ public class DirectoryWatcherRecursive {
 						}	
 						MyLogger.getLogger().info(fullPath + " is not locked");
 						
+						//copying for new file name
+						DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
+						LocalDateTime now = LocalDateTime.now();
+						String tmpDir = PropsManager.getInstance().getProperty("TMPFOLDER");
+						//String destPath = tmpDir + fromHost + "/" + dtf.format(now) + "/";
+						
+						Path targetPath = Paths.get(tmpDir + "/" + hostDir + "_" + fileName);
+						try {
+							Files.copy(path, targetPath, StandardCopyOption.REPLACE_EXISTING);
+						} catch (IOException ex) {
+							MyLogger.logger.error(ex.getMessage(), ex);
+						}
+						
 						// send to printer
+						fullPath = targetPath.toString();
 						WatcherSystem wsys = new WatcherSystem();
 						if (wsys.sendToPrinter(fullPath))	{
 							MyLogger.getLogger().info("File " + fullPath + " successfully sent to print application");
 							File file = new File(fullPath);
+							FileManager.deleteFile(file);
+							file = new File(path.toString());
 							FileManager.deleteFile(file);
 						}
 		
